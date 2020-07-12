@@ -21,7 +21,7 @@
     - 'export PATH={{ PATH }}'
 
 - name: Update terminal session
-  shell: source '{{ golang_shell_profile }}'
+  shell: source '{{ golang_bash_profile }}'
   changed_when: false
   args:
      executable: /bin/bash
