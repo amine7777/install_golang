@@ -1,0 +1,27 @@
+---
+# tasks file for golang
+
+- name: Download golang
+  get_url:
+    url: "{{ golang_download_url }}"
+    dest: /tmp
+    mode: '0644'
+
+- name: Extract golang into {{ golang_path }}
+  unarchive:
+    src: "{{ golang_zip_path }}"
+    dest: "{{ golang_path}}"
+
+- name: Set up golang environment
+  shell: '{{ item }}'
+  with_items:
+    - 'export GOROOT={{ golang_path }}/go/bin'
+    - 'export GOPATH=$HOME/go'
+    - 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH'
+
+- name: Verify if the golang is installed
+  shell: go version
+  register: check_go
+
+- debug:
+    msg: '{{ check_go }}'

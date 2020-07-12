@@ -1,0 +1,8 @@
+- name: Install GoLang version {{ golang_version }}
+  hosts: localhost
+  connection: local
+  become: yes
+  become_user: root
+
+  roles:
+    - role: golang

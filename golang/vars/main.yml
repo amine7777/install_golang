@@ -1,0 +1,6 @@
+---
+# vars file for golang
+golang_version: 1.11
+golang_download_url: https://dl.google.com/go/go{{ golang_version }}.linux-amd64.tar.gz
+golang_zip_path: /tmp/go{{ golang_version }}.linux-amd64.tar.gz
+golang_path: /usr/local/bin
