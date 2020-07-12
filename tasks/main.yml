@@ -28,3 +28,4 @@
   shell: . {{ golang_bash_profile }}
   args:
     executable: /bin/bash
+  changed_when: false
