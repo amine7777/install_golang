@@ -25,7 +25,7 @@
     - 'export PATH={{ PATH }}'
 
 - name: Update bash profile
-  shell: source '{{ golang_bash_profile }}'
+  shell: source {{ golang_bash_profile }}
   changed_when: false
 
 
