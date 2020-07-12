@@ -26,13 +26,15 @@
 
 
 - name: Update bash profile
-  shell: source {{ golang_bash_profile }}
+  shell: . {{ golang_bash_profile }}
   args:
-    executable: /bin/sh
+    executable: /bin/bash
 
 - name: Verify if the golang is installed
   shell: go version
   register: check_go
+  args:
+    executable: /bin/bash
 
 - debug:
     msg: '{{ check_go }}'
