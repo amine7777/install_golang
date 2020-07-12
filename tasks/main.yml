@@ -11,6 +11,7 @@
   unarchive:
     src: "{{ golang_zip_path }}"
     dest: "{{ golang_path}}"
+    remote_src: yes
 
 - name: Set up golang environment
   shell: '{{ item }}'
