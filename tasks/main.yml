@@ -13,14 +13,18 @@
     dest: "{{ golang_path}}"
     remote_src: yes
 
+
 - name: Set up golang environment
-  shell: '{{ item }}'
+  lineinfile:
+    path: '{{ golang_bash_profile }}'
+    line: '{{ item }}'
+    insertafter: EOF
   with_items:
     - 'export GOROOT={{ GOROOT }}'
     - 'export GOPATH={{ GOPATH }}'
     - 'export PATH={{ PATH }}'
 
-- name: Update bash profile 
+- name: Update bash profile
   shell: source '{{ golang_bash_profile }}'
   changed_when: false
   args:
