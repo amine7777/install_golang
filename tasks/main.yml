@@ -20,7 +20,7 @@
     - 'export GOPATH={{ GOPATH }}'
     - 'export PATH={{ PATH }}'
 
-- name: Update terminal session
+- name: Update bash profile 
   shell: source '{{ golang_bash_profile }}'
   changed_when: false
   args:
