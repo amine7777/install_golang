@@ -3,4 +3,8 @@
 golang_version: 1.11
 golang_download_url: https://dl.google.com/go/go{{ golang_version }}.linux-amd64.tar.gz
 golang_zip_path: /tmp/go{{ golang_version }}.linux-amd64.tar.gz
-golang_path: /usr/local/bin
+golang_path: /usr/local
+golang_bash_profile: /root/.bash_profile
+GOROOT: '{{ golang_path }}/go/bin'
+GOPATH: '$HOME/go'
+PATH: '$GOPATH/bin:$GOROOT/bin:$PATH'
