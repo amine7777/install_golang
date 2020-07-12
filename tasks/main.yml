@@ -19,6 +19,10 @@
     - 'export GOPATH=$HOME/go'
     - 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH'
 
+- name: update terminal session
+  command: source ~/.profile
+  changed_when: false
+
 - name: Verify if the golang is installed
   shell: go version
   register: check_go
