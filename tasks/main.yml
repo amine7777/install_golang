@@ -25,9 +25,7 @@
     - 'export PATH={{ PATH }}'
 
 - name: Update bash profile
-  shell: source {{ golang_bash_profile }}
-  changed_when: false
-
+  command: source {{ golang_bash_profile }}
 
 - name: Verify if the golang is installed
   shell: go version
