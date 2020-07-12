@@ -21,7 +21,7 @@
     - 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH'
 
 - name: Update terminal session
-  shell: source $HOME/.profile
+  shell: source .profile
   changed_when: false
   args:
      executable: /bin/bash
