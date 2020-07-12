@@ -28,7 +28,7 @@
 - name: Update bash profile
   shell: source {{ golang_bash_profile }}
   args:
-    executable: /bin/bash
+    executable: /bin/sh
 
 - name: Verify if the golang is installed
   shell: go version
