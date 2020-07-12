@@ -4,4 +4,4 @@
   tasks:
     - name: "Include golang"
       include_role:
-        name: "golang"
+        name: "install_golang"
