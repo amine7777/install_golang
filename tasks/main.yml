@@ -29,3 +29,9 @@
   args:
     executable: /bin/bash
   changed_when: false
+
+- name: Update bash profile
+  shell: . {{ golang_bash_profile }} && go version
+  args:
+    executable: /bin/bash
+  changed_when: false
